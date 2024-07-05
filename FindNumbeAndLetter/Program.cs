@@ -33,6 +33,7 @@ namespace FindNumberAndLetter
 
             Console.WriteLine($"the number of letters in the text : {lettersCount}");
             Console.WriteLine($"the number of numbers in the text : {numbersCount}");
+            Console.ReadLine();
         }
     }
 }
