@@ -8,31 +8,42 @@ namespace FindNumberAndLetter
         {
             Console.WriteLine("This program determines the number of letters and numbers in the entered text");
 
-            Console.Write("Enter the text: ");
-            string userInput = Console.ReadLine();
-
-            int lettersCount = 0;
-            int numbersCount = 0;
-
-            string letters = "";
-            string numbers = "";
-
-            foreach (char c in userInput)
+            string yesOrNo;
+            do 
             {
-                if (char.IsDigit(c))
-                {
-                    numbers += c;
-                    numbersCount++;
-                }
-                else if (char.IsLetter(c))
-                {
-                    letters += c;
-                    lettersCount++;
-                }
-            }
+                Console.Write("Enter the text: ");
+                string userInput = Console.ReadLine();
 
-            Console.WriteLine($"the number of letters in the text : {lettersCount}");
-            Console.WriteLine($"the number of numbers in the text : {numbersCount}");
+                int lettersCount = 0;
+                int numbersCount = 0;
+
+                string letters = "";
+                string numbers = "";
+
+                foreach (char c in userInput)
+                {
+                    if (char.IsDigit(c))
+                    {
+                        numbers += c;
+                        numbersCount++;
+                    }
+                    else if (char.IsLetter(c))
+                    {
+                        letters += c;
+                        lettersCount++;
+                    }
+                }
+
+                Console.WriteLine($"the number of letters in the text : {lettersCount}");
+                Console.WriteLine($"the number of numbers in the text : {numbersCount}");
+
+                Console.WriteLine();
+                Console.WriteLine("Do you want to continue? (yes / no)");
+                yesOrNo = Console.ReadLine();
+
+            } while (yesOrNo.ToLower() == "yes" || yesOrNo.ToLower() == "y");
+
+            Console.WriteLine("Thank you for using our program");
             Console.ReadLine();
         }
     }
